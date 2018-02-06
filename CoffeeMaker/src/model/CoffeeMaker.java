@@ -11,34 +11,33 @@ import model.exceptions.*;
 public class CoffeeMaker {
 
     private int cups;
-    private int CoffeeAge;
+    private int coffeeAge;
 
     public CoffeeMaker(){
-        // cups = 0;
-        // CoffeeAge = -1;
-        // TODO: complete the implementation of this method
+        cups = 0;
+        coffeeAge = -1;
     }
 
     // getters
     public int getTimeSinceLastBrew() {
-        // TODO: complete the implementation of this method
-        return 0;
+        return coffeeAge;
     }
     public int getCupsRemaining() {
-        // TODO: complete the implementation of this method
-        return 0;
+        return cups;
     }
 
     // EFFECTS: return true if there are coffee cups remaining
     public boolean areCupsRemaining() {
-        // TODO: complete the implementation of this method
+        if (cups > 0) {
+            return true;
+        }
         return false;
     }
 
     //REQUIRES: a non-negative integer
     //EFFECTS: sets time since last brew
-    public void setTimeSinceLastBrew(int time) throws IllegalArgumentException {
-        // TODO: complete the implementation of this method
+    public void setTimeSinceLastBrew(int time) {
+        this.coffeeAge = time;
     }
 
     //REQUIRES: beans between 2.40 and 2.60 cups, water > 14.75 cups
@@ -53,7 +52,8 @@ public class CoffeeMaker {
             throw new WaterException(water);
         }
 
-        // TODO: complete the implementation of this method
+        this.cups = 20;
+        this.coffeeAge = 0;
     }
 
     ///REQUIRES: cups remaining > 0, time since last brew < 60
@@ -65,11 +65,6 @@ public class CoffeeMaker {
         } else if (getTimeSinceLastBrew() > 60) {
             throw new StaleCoffeeException(getTimeSinceLastBrew());
         }
-
-
-
-        // TODO: complete the implementation of this method
+        cups -= 1;
     }
-
-
 }

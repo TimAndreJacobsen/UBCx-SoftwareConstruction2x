@@ -164,7 +164,7 @@ public class CoffeeMakerTest {
         // test that pourCoffee -= 1 for each call to pourCoffee()
 
         //SETUP
-        testPourCoffee(); // common method between this method and testPourCoffeeManyCups()
+        testPourCoffeeHelper(); // common method between this method and testPourCoffeeManyCups()
 
         //TEST
         try {  // test 1 cup
@@ -187,11 +187,11 @@ public class CoffeeMakerTest {
         // test that pourCoffee -= 1 for each call to pourCoffee()
 
         //SETUP
-        testPourCoffee();  // common method between this method and testPourCoffeeOneCup()
+        testPourCoffeeHelper();  // common method between this method and testPourCoffeeOneCup()
 
         //TEST
-        for (int i = 0; i < 19; i++) {
-            try {  // pour 19 more cups, expected 0
+        for (int i = 0; i < 20; i++) {
+            try {  // pour 20 cups, expected 0
                 coffeeMaker.pourCoffee();
             } catch (NoCupsRemainingException e) {
                 fail();
@@ -267,7 +267,7 @@ public class CoffeeMakerTest {
     }
 
     @Test
-    public void testPourCoffee() {
+    public void testPourCoffeeHelper() {
         // Helper method
         try {
             coffeeMaker.brew(2.5,15);

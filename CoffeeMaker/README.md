@@ -6,6 +6,6 @@
 	2. write test cases for functionality and exception handling
 	3. implement methods
 	
-	* Specifications for method stubs provided in CoffeeMaker Class
+	* Method stubs and their specifications provided in CoffeeMaker Class
 	* Use a Test Driven Development approach
 	
