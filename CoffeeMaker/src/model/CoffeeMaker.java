@@ -43,12 +43,13 @@ public class CoffeeMaker {
     //REQUIRES: beans between 2.40 and 2.60 cups, water > 14.75 cups
     //EFFECTS: sets cups remaining to full (20 cups) and time since last brew to 0
     public void brew(double beans, double water) throws BeansAmountException, WaterException{
-        // Can return bool for brew completed. assertTrue in test
-        if (beans < 2.4) {
+        // Double check that testing is catching edge cases
+        // assuming between reads as non-inclusive for beans
+        if (beans <= 2.4) { // Bug caught in testing! before "beans < 2.4"
             throw new NotEnoughBeansException(beans);
         } else if (beans > 2.6) {
             throw new TooManyBeansException(beans);
-        } else if (water < 14.75) {
+        } else if (water <= 14.75) { // Bug I didn't catch in testing! before "water < 14.75"
             throw new WaterException(water);
         }
 
