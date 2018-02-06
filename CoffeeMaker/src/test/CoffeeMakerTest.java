@@ -32,7 +32,7 @@ public class CoffeeMakerTest {
 
         //TEST
         try { // bottom boundary test case
-            cmMin.brew(2.4,14.75);
+            cmMin.brew(2.41,14.751);
         } catch (BeansAmountException e) {
             fail();
         } catch (WaterException e) {
@@ -49,7 +49,7 @@ public class CoffeeMakerTest {
         }
 
         try {  // upper boundary test case
-            cmMax.brew(2.6,100.0);
+            cmMax.brew(2.59,100.0);
         } catch (BeansAmountException e) {
             fail();
         } catch (WaterException e) {
@@ -144,7 +144,7 @@ public class CoffeeMakerTest {
         }
 
         try {
-            minBoundary.brew(2.5, 14.74);
+            minBoundary.brew(2.5, 14.75);
         } catch (BeansAmountException e) {
             fail();
         } catch (WaterException e) {
